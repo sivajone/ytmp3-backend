@@ -16,9 +16,6 @@ def download():
     print(url)
     video = YouTube(url)
     stream = video.streams.order_by('abr').get_audio_only()
-    filename = stream.default_filename.replace(' ', '-')
-    stream.download(output_path='./static/', filename=filename)
-
     return jsonify(
-        url='/static/' + filename
+        url=stream.url
     )

@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, g
+from flask import Flask, request, redirect
 from flask.json import jsonify
 from pytube import YouTube
 
@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def redirect():
+def base():
     return redirect('https://ytmp3.sivaj.pl/')
 
 

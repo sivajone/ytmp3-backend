@@ -10,7 +10,7 @@ def base():
     return redirect('https://ytmp3.sivaj.pl/')
 
 
-@app.route('/download',)
+@app.route('/download', methods=['POST'])
 def download():
     url = request.form.get('url')
     print(url)
